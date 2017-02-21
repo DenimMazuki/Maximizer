@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
-class LoginViewController: UIViewController {
+
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        // TO-DO Configure sign-in button's look and feel
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +25,10 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func signInButtonDidPress(_ sender: GIDSignInButton) {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
     /*
     // MARK: - Navigation
 

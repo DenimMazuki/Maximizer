@@ -6,4 +6,12 @@
 //  Copyright © 2017 Denim Mazuki. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class User:NSObject {
+    var tasks: [Task]
+    
+    override init() {
+        self.tasks = [Task]()
+    }
+}
